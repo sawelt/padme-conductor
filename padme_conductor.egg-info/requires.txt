@@ -1,2 +1,2 @@
-psycopg2
 fhirpy~=1.2.1
+psycopg2

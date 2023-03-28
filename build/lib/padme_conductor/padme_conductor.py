@@ -4,10 +4,13 @@ import logging
 import os
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Union
+
+import padme_conductor.constants as constants
 from padme_conductor.Query import Query
 from padme_conductor.Separation import Separation
 from padme_conductor.TrainLogger import TrainLogger
-import padme_conductor.constants as constants
+
+
 # Helpers
 # ________________
 def _run_once(f):
@@ -30,6 +33,9 @@ def _increment_station_once_per_run():
 
     save_metadata["runs"] += 1
 
+    station_id = get_environment_vars([constants._STATION_ID])[constants._STATION_ID]
+    save_metadata["visited_stations"].append(station_id)
+
     with open(constants._save_metadata_path, "w") as f:
         json.dump(save_metadata, f)
 
@@ -42,10 +48,19 @@ def _convert_to_path(file_path: Union[str, Path]):
         return file_path
 
 
-def is_first_execution():
-    if _get_save_metadata()["runs"] == 0:
+def is_first_execution(separate_by: Separation = Separation.NO_SEPARATION):
+    if separate_by == Separation.NO_SEPARATION:
+        if _get_save_metadata()["runs"] == 0:
+            return True
+        return False
+    elif separate_by == Separation.STATION:
+        station_name = get_environment_vars(["STATION_ID"])["STATION_ID"]
+        visited = _get_save_metadata()["visited_stations"]
+        if station_name in visited:
+            return False
         return True
-    return False
+    elif separate_by == Separation.RUN:
+        return True
 
 
 # Environment Variables
@@ -229,7 +244,6 @@ def log_debug(msg: object, *args: object, extra=None):
 
 def log_ml_model(message):
     print(message)
-
 
 
 logger = TrainLogger()
