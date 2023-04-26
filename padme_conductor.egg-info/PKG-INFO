@@ -1,13 +1,16 @@
 Metadata-Version: 2.1
 Name: padme-conductor
-Version: 0.1.6
+Version: 0.1.7
 Summary: A library which supports the creation of so-called Trains for the Personal Health Train infrastructure.
 Home-page: https://github.com/sawelt/padme-conductor
 Author: Martin Goerz, Sascha Welten
 Author-email: welten@dbis.rwth-aachen.de
 License: UNKNOWN
-Description: # PADME Conductor Library
 Keywords: Personal Health Train,PADME
 Platform: UNKNOWN
 Classifier: Intended Audience :: Science/Research
 Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PADME Conductor Library
+

@@ -1,7 +1,9 @@
 from dataclasses import dataclass, field
-from typing import Any, Union
-from padme_conductor.Plugins import DatabasePlugin
 from itertools import count
+from typing import Any, Union
+
+from padme_conductor.Plugins.DatabasePlugin import DatabasePlugin
+
 
 @dataclass
 class Query:
