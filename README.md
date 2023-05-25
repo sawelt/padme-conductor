@@ -1,5 +1,8 @@
 # PADME Conductor Library
 
+<img src="./logo.svg" style="display:block;margin-left:auto;margin-right:auto;width:40%;">
+<br>
+
 A library to simplify the interactions with the Personal Health Train (PHT) and its Stations.
 
 
