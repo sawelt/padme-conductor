@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="padme-conductor",
-    version="0.1.7",
+    version="0.1.9",
     description="A library which supports the creation of so-called Trains for the Personal Health Train infrastructure.",
     py_modules=["padme_conductor"],
     packages=find_packages(),

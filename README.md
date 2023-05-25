@@ -1,7 +1,7 @@
 # PADME Conductor Library
 
 <p align="center">
-    <img src="./logo.svg" width=220>
+    <img src="https://raw.githubusercontent.com/sawelt/padme-conductor/main/logo.svg" width=220>
 </p>
 
 A library to simplify the interactions with the Personal Health Train (PHT) and its Stations.
