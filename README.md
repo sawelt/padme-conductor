@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/611882682.svg)](https://zenodo.org/doi/10.5281/zenodo.11190828)
+
 # PADME Conductor Library
 
 <p align="center">
